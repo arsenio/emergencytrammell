@@ -102,7 +102,7 @@ if ($launch >= time() && $_GET['alpha'] != true) {
 <body>
 
 <div id="et_button">
-    <a id="superclick" href="/"><img class="main" src="images/trammell-1.gif" alt="Mwa ha ha"></a>
+    <a id="superclick" href="/"><img id= "superclick_image" class="main" src="images/trammell-1.gif" alt="Mwa ha ha"></a>
     <img class="burst" src="images/burst.gif" alt="">
 </div>
 

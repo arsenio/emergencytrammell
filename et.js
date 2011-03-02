@@ -45,6 +45,7 @@ dojo.addOnLoad(function() {
     dojo.style(spin, 'display', 'none');
 
     var theMan = dojo.byId('superclick');
+    var theManImg = dojo.byId('superclick_image');
     dojo.connect(theMan, 'onclick', function(e) {
         dojo.stopEvent(e);
         if (timer !== undefined) {
@@ -54,6 +55,13 @@ dojo.addOnLoad(function() {
         dojo.style(spin, 'display', 'none');
 
         var rndNum = Math.floor(Math.random()*5);
-        sounds[rndNum].play();
+        sounds[rndNum].play({
+          onplay: function(){
+            theManImg.src = 'images/trammell-on.png';
+          },
+          onfinish: function() {
+            theManImg.src = 'images/trammell-1.gif';
+          }
+        });
     });
 });
