@@ -139,19 +139,16 @@ var loaded = new Array(false, false, false, false, false);
  
 dojo.addOnLoad(function() {
     soundManager.url = '/ettest/SoundManager2/swf/';
-//    soundManager.flashVersion = 9; // optional: shiny features (default = 8)
     soundManager.useFlashBlock = false; // optionally, enable when you're ready to dive in
-// enable HTML5 audio support, if you're feeling adventurous. iPad/iPhone will always get this.
     soundManager.debugMode = false;
-//    soundManager.useHTML5Audio = true;
     soundManager.onready(function() {
         for (var i = 0; i < 6; i++) {
             var j = i + 1;
             sounds.push(soundManager.createSound({
                 id:  'etsound' + j,
+                autoLoad: true,
                 url: '/ettest/et' + j + '.mp3',
                 onload: function() {
-                    console.log('loaded ' + i);
                     unloaded[i] = true;
                 }
             }));
