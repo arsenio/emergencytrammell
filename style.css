@@ -1,0 +1,16 @@
+body {
+    font-family: Palatino Linotype, Book Antiqua, Palatino, serif;
+    font-size: 16pt;
+}
+
+ol li {
+    color: #00c;
+    cursor: pointer;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+
+ol li:hover {
+    color: #60f;
+    text-decoration: underline;
+}
