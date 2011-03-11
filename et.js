@@ -1,6 +1,4 @@
 var spin, timer;
-var sounds = new Array();
-var loaded = new Array(false, false, false, false, false);
 
 dojo.addOnLoad(function() {
     soundManager.url = 'SoundManager2/swf/';
@@ -9,31 +7,15 @@ dojo.addOnLoad(function() {
     soundManager.onready(function() {
         for (var i = 0; i < 6; i++) {
             var j = i + 1;
-            sounds.push(soundManager.createSound({
+            soundManager.createSound({
+                autoload:  true,
+                autoplay:  false,
                 id:  'etsound' + j,
-                autoLoad: true,
                 url: 'audio/et' + j + '.mp3',
-                onload: function() {
-                    unloaded[i] = true;
-                }
-            }));
+            });
         }
     });
 });
-
-function loadtimer() {
-    var any_unloaded = false;
-    for (var unload in unloaded) {
-        if (!unload) {
-            any_unloaded = true;
-        }
-    }
-    if (!any_unloaded) {
-        dojo.style(spin, 'display', 'none');
-        return;
-    }
-    return window.setTimeout(loadtimer, 50);
-}
 
 dojo.addOnLoad(function() {
     var spinner = dojo.doc.createElement('img');
@@ -54,8 +36,8 @@ dojo.addOnLoad(function() {
 
         dojo.style(spin, 'display', 'none');
 
-        var rndNum = Math.floor(Math.random()*5);
-        sounds[rndNum].play({
+        var rndNum = 1 + (Math.floor(Math.random()*5));
+        soundManager.play('etsound' + rndNum, {
           onplay: function(){
             theManImg.src = 'images/trammell-on.png';
           },
