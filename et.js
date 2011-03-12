@@ -1,4 +1,4 @@
-var spin, timer;
+var timer;
 
 dojo.addOnLoad(function() {
     soundManager.url = 'SoundManager2/swf/';
@@ -18,41 +18,58 @@ dojo.addOnLoad(function() {
 });
 
 dojo.addOnLoad(function() {
-    var spinner = dojo.doc.createElement('img');
-    spinner.src = 'images/spinner.gif';
-    spinner.border = 0;
-    spin = dojo.create(spinner);
-    dojo.addClass(spin, 'spinner');
-    dojo.place(spin, 'footer', 'before');
-    dojo.style(spin, 'display', 'none');
+    theManImg = dojo.byId('superclick_image');
+
+    // attempt at preload
+    // soundManager.onready(function(){
+    //     sound = soundManager.load(random_file(), {
+    //         onplay: function(){
+    //             theManImg.src = 'images/trammell-on.png';
+    //         },
+    //         onfinish: function() {
+    //             theManImg.src = 'images/trammell-1.gif';
+    //
+    //         }
+    //     });
+    // });
 
     var theMan = dojo.byId('superclick');
-    var theManImg = dojo.byId('superclick_image');
     dojo.connect(theMan, 'onclick', function(e) {
         dojo.stopEvent(e);
         if (timer !== undefined) {
             window.clearTimeout(timer);
         }
 
-        dojo.style(spin, 'display', 'none');
+        sound = soundManager.play(random_file(), {
+            onplay: function(){
+                theManImg.src = 'images/trammell-on.png';
+            },
+            onfinish: function() {
+                theManImg.src = 'images/trammell-1.gif';
 
-        var rndNum = 1 + (Math.floor(Math.random()*5));
-        //rndNum = 6;
-        soundManager.play('etsound' + rndNum, {
-          onplay: function(){
-            theManImg.src = 'images/trammell-on.gif';
-          },
-          onfinish: function() {
-            theManImg.src = 'images/trammell-1.gif';
-          }
-        }).onposition(2500, function(){
-            if (rndNum == 6) {
-                theManImg.src = 'images/snort.gif';
-            }
-        }).onposition(3000, function(){
-            if (rndNum == 6) {
-                theManImg.src = 'images/trammell-on.gif';
             }
         });
+
+        sound.onposition(2500, function(){
+            if (sound.url == 'audio/et6.mp3') {
+                theManImg.src = 'images/snort.png';
+            }
+        }).onposition(3000, function(){
+            if (sound.url == 'audio/et6.mp3') {
+                theManImg.src = 'images/trammell-on.png';
+            }
+        });
+        sound.play({
+            onfinish: function() {
+                theManImg.src = 'images/trammell-1.gif';
+            }
+        });
+
     });
 });
+
+function random_file() {
+    num = 1 + (Math.floor(Math.random()*5));
+    //num = 6;
+    return 'etsound' + num;
+}

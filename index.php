@@ -93,6 +93,16 @@ if ($launch >= time() && $_GET['alpha'] != true) {
             max-width: 90%;
         }
     }
+
+    <? if (is_iPhone()) { ?>
+      img.burst {
+        width: 300px;
+      }
+      img.main {
+        width: 150px;
+      }
+    <? } ?>
+
     </style>
     <script src="js/dojo.js" type="text/javascript"></script>
 
@@ -102,7 +112,7 @@ if ($launch >= time() && $_GET['alpha'] != true) {
 <body>
 
 <div id="et_button">
-    <a id="superclick" href="/"><img id= "superclick_image" class="main" src="images/trammell-1.gif" alt="Mwa ha ha"></a>
+    <a id="superclick" href="/"><img id="superclick_image" class="main" src="images/trammell-1.gif" alt="Mwa ha ha"></a>
     <img class="burst" src="images/burst.gif" alt="">
 </div>
 
@@ -123,7 +133,23 @@ if ($launch >= time() && $_GET['alpha'] != true) {
 
 </div>
 
-<img src="images/snort.gif" style="display:none">
-<img src="images/trammell-1.gif" style="display:none">
+<img src="images/snort.png" style="display:none">
+<img src="images/trammell-on.png" style="display:none">
 </body>
 </html>
+
+
+<?
+
+function is_iPhone($agent='') {
+    if(empty($agent)) $agent = $_SERVER['HTTP_USER_AGENT'];
+    if(!empty($agent) and preg_match("~Mozilla/[^ ]+ \((iPhone|iPod); U; CPU [^;]+ Mac OS X; [^)]+\) AppleWebKit/[^ ]+ \(KHTML, like Gecko\) Version/[^ ]+ Mobile/[^ ]+ Safari/[^ ]+~",$agent,$match)) {
+        return true;
+    } elseif(stristr($agent,'iphone') or stristr($agent,'ipod')){
+        return true;
+    } else {
+        return false;
+    }
+}
+
+?>
