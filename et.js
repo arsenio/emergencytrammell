@@ -17,6 +17,10 @@ dojo.addOnLoad(function() {
     });
 });
 
+if (window.navigator.standalone) {
+    alert('yes');
+}
+
 dojo.addOnLoad(function() {
     theManImg = dojo.byId('superclick_image');
 
