@@ -38,6 +38,9 @@ if ($launch >= time() && $_GET['alpha'] != true) {
         margin-left: 5px;
         padding: 2px;
     }
+    .foot img.trammell {
+        border: 2px double #ff0080;
+    }
     .foot img:hover {
         -webkit-transform: scale(1.2);
     }
@@ -157,7 +160,7 @@ if ($launch >= time() && $_GET['alpha'] != true) {
         <img width="30" src="http://a2.twimg.com/profile_images/1137054658/burka_normal.png">
         </a>
         <a href="http://twitter.com/emertrammell">
-        <img width="30" src="http://a2.twimg.com/profile_images/1270279075/trammell-touch-icon_normal.png">
+        <img class="trammell" width="30" src="http://a2.twimg.com/profile_images/1270279075/trammell-touch-icon_normal.png">
         </a>
     </p>
 </div>
