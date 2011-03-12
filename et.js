@@ -37,7 +37,7 @@ dojo.addOnLoad(function() {
         dojo.style(spin, 'display', 'none');
 
         var rndNum = 1 + (Math.floor(Math.random()*5));
-        rndNum = 6;
+        //rndNum = 6;
         soundManager.play('etsound' + rndNum, {
           onplay: function(){
             theManImg.src = 'images/trammell-on.gif';
