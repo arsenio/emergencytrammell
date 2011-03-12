@@ -37,13 +37,22 @@ dojo.addOnLoad(function() {
         dojo.style(spin, 'display', 'none');
 
         var rndNum = 1 + (Math.floor(Math.random()*5));
+        rndNum = 6;
         soundManager.play('etsound' + rndNum, {
           onplay: function(){
-            theManImg.src = 'images/trammell-on.png';
+            theManImg.src = 'images/trammell-on.gif';
           },
           onfinish: function() {
             theManImg.src = 'images/trammell-1.gif';
           }
+        }).onposition(2500, function(){
+            if (rndNum == 6) {
+                theManImg.src = 'images/snort.gif';
+            }
+        }).onposition(3000, function(){
+            if (rndNum == 6) {
+                theManImg.src = 'images/trammell-on.gif';
+            }
         });
     });
 });

@@ -123,5 +123,7 @@ if ($launch >= time() && $_GET['alpha'] != true) {
 
 </div>
 
+<img src="images/snort.gif" style="display:none">
+<img src="images/trammell-1.gif" style="display:none">
 </body>
 </html>
