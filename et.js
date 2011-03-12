@@ -15,11 +15,13 @@ dojo.addOnLoad(function() {
             });
         }
     });
+
+    if (window.navigator.standalone) {
+        dojo.style('iphone_bookmark', 'display', 'none');
+    }
+
 });
 
-if (window.navigator.standalone) {
-    alert('yes');
-}
 
 dojo.addOnLoad(function() {
     theManImg = dojo.byId('superclick_image');
