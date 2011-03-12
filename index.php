@@ -99,6 +99,28 @@ if ($launch >= time() && $_GET['alpha'] != true) {
         }
     }
 
+    div.iphone_bookmark{
+      text-align:center;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 0;
+      padding: 0;
+
+    }
+
+    div.iphone_bookmark div{
+      background-image:url('images/arrow.png');
+      background-repeat:no-repeat;
+      background-position: center;
+      height: 30px;
+      font-size: 16px;
+      color: purple;
+      font-weight: bold;
+    }
+
+
     <? if ($browser->isMobile()) { ?>
       img.burst {
         width: 300px;
@@ -134,11 +156,21 @@ if ($launch >= time() && $_GET['alpha'] != true) {
         <a href="http://twitter.com/dburka">
         <img width="30" src="http://a2.twimg.com/profile_images/1137054658/burka_normal.png">
         </a>
+        <a href="http://twitter.com/emertrammell">
+        <img width="30" src="http://a2.twimg.com/profile_images/1270279075/trammell-touch-icon_normal.png">
+        </a>
     </p>
-
 </div>
+
 
 <img src="images/snort.png" style="display:none">
 <img src="images/trammell-on.png" style="display:none">
+
+<? if (!$browser->getPlatform() == Browser::PLATFORM_IPHONE) { ?>
+<div class="iphone_bookmark">
+  <div> Add to Home Screen </div>
+</div>
+<? } ?>
+
 </body>
 </html>
