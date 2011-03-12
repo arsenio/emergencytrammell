@@ -1,11 +1,6 @@
 <?
 require 'lib/Browser.php';
 $browser = new Browser();
-
-$launch = gmmktime(0, 0, 0, 3, 13, 2011);
-if ($launch >= time() && $_GET['alpha'] != true) {
-    header('Location: etv1/');
-}
 ?>
 <!DOCTYPE html>
 <html>
