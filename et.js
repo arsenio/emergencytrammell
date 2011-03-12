@@ -70,6 +70,6 @@ dojo.addOnLoad(function() {
 
 function random_file() {
     num = 1 + (Math.floor(Math.random()*5));
-    num = 6;
+    //num = 6;
     return 'etsound' + num;
 }
