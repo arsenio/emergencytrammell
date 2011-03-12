@@ -1,5 +1,5 @@
 <?
-$launch = gmmktime(0, 0, 0, 3, 11, 2011);
+$launch = gmmktime(0, 0, 0, 3, 12, 2011);
 if ($launch >= time() && $_GET['alpha'] != true) {
     header('Location: etv1/');
 }
