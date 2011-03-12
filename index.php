@@ -12,6 +12,8 @@ if ($launch >= time() && $_GET['alpha'] != true) {
 <head>
     <title>Emergency Trammell!</title>
     <meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,width=device-width" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="apple-touch-icon" href="./trammell-touch-icon.png" />
     <style type="text/css">
     body {
         font-family: "Lucida Grande", sans-serif;
