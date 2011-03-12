@@ -50,11 +50,11 @@ dojo.addOnLoad(function() {
             }
         });
 
-        sound.onposition(2500, function(){
+        sound.onposition(2130, function(){
             if (sound.url == 'audio/et6.mp3') {
                 theManImg.src = 'images/snort.png';
             }
-        }).onposition(3000, function(){
+        }).onposition(2500, function(){
             if (sound.url == 'audio/et6.mp3') {
                 theManImg.src = 'images/trammell-on.png';
             }
@@ -70,6 +70,6 @@ dojo.addOnLoad(function() {
 
 function random_file() {
     num = 1 + (Math.floor(Math.random()*5));
-    //num = 6;
+    num = 6;
     return 'etsound' + num;
 }

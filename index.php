@@ -1,4 +1,7 @@
 <?
+require 'lib/Browser.php';
+$browser = new Browser();
+
 $launch = gmmktime(0, 0, 0, 3, 13, 2011);
 if ($launch >= time() && $_GET['alpha'] != true) {
     header('Location: etv1/');
@@ -94,7 +97,7 @@ if ($launch >= time() && $_GET['alpha'] != true) {
         }
     }
 
-    <? if (is_iPhone()) { ?>
+    <? if ($browser->isMobile()) { ?>
       img.burst {
         width: 300px;
       }
@@ -137,19 +140,3 @@ if ($launch >= time() && $_GET['alpha'] != true) {
 <img src="images/trammell-on.png" style="display:none">
 </body>
 </html>
-
-
-<?
-
-function is_iPhone($agent='') {
-    if(empty($agent)) $agent = $_SERVER['HTTP_USER_AGENT'];
-    if(!empty($agent) and preg_match("~Mozilla/[^ ]+ \((iPhone|iPod); U; CPU [^;]+ Mac OS X; [^)]+\) AppleWebKit/[^ ]+ \(KHTML, like Gecko\) Version/[^ ]+ Mobile/[^ ]+ Safari/[^ ]+~",$agent,$match)) {
-        return true;
-    } elseif(stristr($agent,'iphone') or stristr($agent,'ipod')){
-        return true;
-    } else {
-        return false;
-    }
-}
-
-?>
