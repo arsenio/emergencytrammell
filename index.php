@@ -166,7 +166,7 @@ if ($launch >= time() && $_GET['alpha'] != true) {
 <img src="images/snort.png" style="display:none">
 <img src="images/trammell-on.png" style="display:none">
 
-<? if (!$browser->getPlatform() == Browser::PLATFORM_IPHONE) { ?>
+<? if ($browser->getPlatform() == Browser::PLATFORM_IPHONE) { ?>
 <div class="iphone_bookmark">
   <div> Add to Home Screen </div>
 </div>
