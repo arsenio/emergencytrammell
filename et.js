@@ -5,7 +5,7 @@ dojo.addOnLoad(function() {
     soundManager.useFlashBlock = false; // optionally, enable when you're ready to dive in
     soundManager.debugMode = false;
     soundManager.onready(function() {
-        for (var i = 0; i < 6; i++) {
+        for (var i = 0; i < 8; i++) {
             var j = i + 1;
             soundManager.createSound({
                 autoload:  true,
@@ -75,7 +75,7 @@ dojo.addOnLoad(function() {
 });
 
 function random_file() {
-    num = 1 + (Math.floor(Math.random()*6));
-    //num = 6;
+    num = 1 + (Math.floor(Math.random()*8));
+    //num = 8;
     return 'etsound' + num;
 }
