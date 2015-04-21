@@ -146,16 +146,16 @@ $browser = new Browser();
     <p>Brought to you by:</p>
     <p>
         <a href="http://twitter.com/ryan000">
-        <img width="30" src="http://a3.twimg.com/profile_images/62534979/g3K5QH7bY1YIzM5mOt86sqTDm2p-UMFpEO13Y2JAj8EDXFeEIVdD-2r1db5ZutCh_bigger.jpg">
+        <img width="30" src="http://avatars.io/twitter/ryan000">
         </a>
         <a href="http://twitter.com/arsenio">
-        <img width="30" src="http://a1.twimg.com/profile_images/57097094/18046020609735137514.jpeg___150_500_150_600_08a9f2db__bigger.jpg">
+        <img width="30" src="http://avatars.io/twitter/arsenio">
         </a>
         <a href="http://twitter.com/dburka">
-        <img width="30" src="http://a2.twimg.com/profile_images/1137054658/burka_normal.png">
+        <img width="30" src="http://avatars.io/twitter/dburka">
         </a>
         <a href="http://twitter.com/emertrammell">
-        <img class="trammell" width="30" src="http://a2.twimg.com/profile_images/1270279075/trammell-touch-icon_normal.png">
+        <img class="trammell" width="30" src="http://avatars.io/twitter/emertrammell">
         </a>
     </p>
 </div>
