@@ -130,8 +130,6 @@ $browser = new Browser();
 
     </style>
     <script src="js/dojo.js" type="text/javascript"></script>
-
-    <script src="SoundManager2/script/soundmanager2.js"></script>
     <script src="et.js"></script>
 </head>
 <body>
