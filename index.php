@@ -15,7 +15,7 @@ $browser = new Browser();
         font-size: 10px;
     }
     .foot {
-        bottom: 20px;
+        bottom: 30px;
         color: #777;
         position: absolute;
         right: 20px;
@@ -40,10 +40,12 @@ $browser = new Browser();
         -webkit-transform: scale(1.2);
     }
     #et_button {
+        position: absolute;
         height: 500px;
-        margin: 20px auto;
-        position: relative;
         width: 500px;
+        top: 0;
+        left: 50%;
+        margin: 20px 0 0 -250px;
     }
     img.main {
         -webkit-transition: all 0.2s ease-in-out;
@@ -91,9 +93,23 @@ $browser = new Browser();
      -webkit-animation-timing-function: ease-in-out;
     }
     @media all and (max-width: 600px) {
-        #et_button img  {
-            max-height: 90%;
-            max-width: 90%;
+        #et_button {
+            height: 100vw;
+            width: 100vw;
+            top: 0;
+            left: 0;
+            margin: 20px 0 0 0;
+        }
+        img.burst {
+            width: 100vw;
+        }
+        img.main {
+            width: 50vw;
+            left: 25vw;
+        }
+        img.main:hover {
+            -webkit-transform: none;
+            -webkit-animation-name: none;
         }
     }
 
@@ -117,17 +133,6 @@ $browser = new Browser();
       color: purple;
       font-weight: bold;
     }
-
-
-    <? if ($browser->isMobile()) { ?>
-      img.burst {
-        width: 300px;
-      }
-      img.main {
-        width: 150px;
-      }
-    <? } ?>
-
     </style>
     <script src="js/dojo.js" type="text/javascript"></script>
     <script src="et.js"></script>

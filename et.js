@@ -18,7 +18,7 @@ function onPlay(evt) {
             timer = setTimeout(function() {
                 theManImg.src = 'images/trammell-on.png';
             }, 350);
-        }, 2130);
+        }, 2350);
     }
 };
 
