@@ -137,6 +137,15 @@ $browser = new Browser();
     <script src="js/dojo.js" type="text/javascript"></script>
     <script src="et.js"></script>
 </head>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-7614079-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
 <body>
 
 <div id="et_button">
@@ -175,12 +184,3 @@ $browser = new Browser();
 
 </body>
 </html>
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-try {
-var pageTracker = _gat._getTracker("UA-7614079-1");
-pageTracker._trackPageview();
-} catch(err) {}</script>
