@@ -1,4 +1,4 @@
-<?
+<?php
 require 'lib/Browser.php';
 $browser = new Browser();
 ?>
@@ -176,11 +176,11 @@ $browser = new Browser();
 <img src="images/snort.png" style="display:none">
 <img src="images/trammell-on.png" style="display:none">
 
-<? if ($browser->getPlatform() == Browser::PLATFORM_IPHONE) { ?>
+<?php if ($browser->getPlatform() == Browser::PLATFORM_IPHONE) { ?>
 <div class="iphone_bookmark" id="iphone_bookmark">
   <div> Add to Home Screen </div>
 </div>
-<? } ?>
+<?php } ?>
 
 </body>
 </html>
